@@ -1,0 +1,94 @@
+=== Performance Analysis ==
+== Shadow map only vs Shadow map + smoothie render times ==
+- [Method, Res] vs Time given 130,000 edges
+    - Shadow map only
+        - 512x512
+            - 1.3ms
+        - 1024x1024
+            - 1.8ms
+        - 2048x2048
+            - 2.5ms
+        - 4096x4096
+            - 3.8ms
+        - 6144x6144
+            - 5.5ms
+        - 8192x8192
+            - 10.2ms
+        - 10000x10000
+            - 14.0ms
+    - Shadow map + smoothie (with smoothie geometry already constructed)
+        - 512x512
+            - 1.35ms
+        - 1024x1024
+            - 1.5ms
+        - 2048x2048
+            - 2.4ms
+        - 4096x4096
+            - 5.4ms
+        - 6144x6144
+            - 10.8ms
+        - 8192x8192
+            - 18.1ms
+        - 10000x10000
+            - 25.8ms
+    - Expectation is that shadow map + smoothie will be greater than shadow map in all cases since smoothie rendering requires an additional pass of rendering smoothie depths and alphas.
+== Render times per frame with dynamic lighting ==
+- Edge Count vs Frame Time given Res 1024x1024, Method 4 sample smoothies + shadowmaps
+    - 721 edges
+        - 0.5ms
+    - 2977 edges
+        - 0.8ms
+    - 12097 edges
+        - 2.3ms
+    - 48769 edges
+        - 9.5ms
+    - 67051 edges
+        - 14.0ms
+    - 96661 edges
+        - 21.0ms
+    - 131671 edges
+        - 29.0ms
+    - 195841 edges
+        - 41.0ms
+- Edge Count vs Geometry Construction Time 
+    - 721 edges
+        - 0.25ms
+    - 2977 edges
+        - 0.75ms
+    - 6769 edges
+        - 1.5ms
+    - 12097 edges
+        - 2.5ms
+    - 18961 edges
+        - 3.7ms
+    - 48769 edges
+        - 9.5ms
+    - 67051 edges
+        - 14.5ms
+    - 96661 edges
+        - 21.0ms
+    - 131671 edges
+        - 29.0ms
+    - 195841 edges
+        - 41.0ms
+== Render times per frame (reconstructing smoothie geometry and shadow maps and smoothie buffers each frame) ==
+- For different shadow map and smoothie buffer resolutions (edge count = ??)
+- For different edge counts (resolution = 1024x1024)
+
+=== Visual Analysis ===
+- Simple model
+    - Shadow map vs smoothie renders (t = 0.02) vs smoothie renders (t = 0.08)
+        - 256x256
+        - 512x512
+        - 1024x1024
+- Complex model
+    - Shadow map vs smoothie renders (t = 0.02) vs smoothie renders (t = 0.08)
+        - 256x256
+        - 512x512
+        - 1024x1024
+- Overlap results
+
+== Other observations ==
+- Oversized bias creates a smoothie discontinuity
+- Dynamic lighting observations
+    - For low-poly figures, changes in smoothies can be very noticeable due to distant edges

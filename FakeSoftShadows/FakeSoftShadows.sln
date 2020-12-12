@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FakeSoftShadows", "FakeSoftShadows.vcxproj", "{BC520F4F-8D07-4EBC-A807-E1DD1E098DD8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nana", "third_party\nana\build\vc2015\nana.vcxproj", "{25B21068-491B-4A9F-B99F-6C27BF31BAAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC520F4F-8D07-4EBC-A807-E1DD1E098DD8}.Debug|x86.ActiveCfg = Debug|Win32
+		{BC520F4F-8D07-4EBC-A807-E1DD1E098DD8}.Debug|x86.Build.0 = Debug|Win32
+		{BC520F4F-8D07-4EBC-A807-E1DD1E098DD8}.Release|x86.ActiveCfg = Release|Win32
+		{BC520F4F-8D07-4EBC-A807-E1DD1E098DD8}.Release|x86.Build.0 = Release|Win32
+		{25B21068-491B-4A9F-B99F-6C27BF31BAAD}.Debug|x86.ActiveCfg = Debug|Win32
+		{25B21068-491B-4A9F-B99F-6C27BF31BAAD}.Debug|x86.Build.0 = Debug|Win32
+		{25B21068-491B-4A9F-B99F-6C27BF31BAAD}.Release|x86.ActiveCfg = Release|Win32
+		{25B21068-491B-4A9F-B99F-6C27BF31BAAD}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

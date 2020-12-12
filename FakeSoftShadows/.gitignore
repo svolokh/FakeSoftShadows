@@ -1,0 +1,8 @@
+Debug/
+Release/
+.vs
+third_party/temp
+third_party/nana/build/bin/*
+**.user
+**.db
+**.opendb
